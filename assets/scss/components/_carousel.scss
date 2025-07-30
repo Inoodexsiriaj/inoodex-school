@@ -4,6 +4,14 @@
 /*  02. Carousel CSS START
 /*----------------------------------------*/
 .banner__slider {
+  .slider__padding {
+    @media #{$sm} {
+      padding: 0;
+    }
+    @media #{$xs} {
+      padding: 0;
+    }
+  }
   .slider__inner {
     .slider__item {
       width: 100%;
