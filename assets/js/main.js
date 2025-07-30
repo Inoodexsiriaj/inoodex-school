@@ -295,37 +295,6 @@
     },
   });
 
-  var postboxSlider = new Swiper(".postbox__slider", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: ".postbox-slider-button-next",
-      prevEl: ".postbox-slider-button-prev",
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 1,
-      },
-      992: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-  });
-
   ////////////////////////////////////////////////////
   // 13. Masonary Js
   $(".grid").imagesLoaded(function () {
@@ -369,23 +338,6 @@
   ////////////////////////////////////////////////////
   // 14. Wow Js
   new WOW().init();
-
-  ////////////////////////////////////////////////////
-  // 16. Cart Quantity Js
-  $(".cart-minus").click(function () {
-    var $input = $(this).parent().find("input");
-    var count = parseInt($input.val()) - 1;
-    count = count < 1 ? 1 : count;
-    $input.val(count);
-    $input.change();
-    return false;
-  });
-  $(".cart-plus").click(function () {
-    var $input = $(this).parent().find("input");
-    $input.val(parseInt($input.val()) + 1);
-    $input.change();
-    return false;
-  });
 
   ////////////////////////////////////////////////////
   // 17. Show Login Toggle Js
