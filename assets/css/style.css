@@ -17,8 +17,8 @@
   --tp-grey-2: #f5f6f8;
   --tp-text-body: #000;
   --tp-text-1: #000;
-  --tp-theme-1: #3d6ce7;
-  --tp-theme-2: #1d0892;
+  --tp-theme-1: #495057;
+  --tp-theme-2: #3d6ce7;
   --tp-border-1: #000;
   /**
   @font weight declaration
@@ -1159,6 +1159,7 @@ input[type=color] {
 .gallery .gallery__box .section__title h2 {
   color: var(--tp-common-white);
   font-size: 24px;
+  margin-bottom: 0;
 }
 .gallery .gallery__box .gallery__images {
   padding: 20px;
@@ -1180,70 +1181,16 @@ input[type=color] {
 /*  02. HEADER CSS START
 /*----------------------------------------*/
 .header__bottom {
-  background: var(--tp-theme-1);
+  background: var(--tp-theme-2);
   color: var(--tp-common-white);
-}
-.header__transparent {
-  position: fixed !important;
-  left: 0;
-  margin: auto;
-  top: 0;
-  width: 100%;
-  z-index: 99;
-  background: transparent;
-}
-.header__info ul li {
-  list-style: none;
-  display: inline-block;
-  margin-right: 20px;
-}
-.header__info ul li:last-child {
-  margin-right: 0;
-}
-.header__info ul li a {
-  color: var(--tp-text-2);
-  font-size: 13px;
-}
-.header__info ul li a:hover {
-  color: var(--tp-theme-1);
-}
-.header__info ul li a i {
-  margin-right: 5px;
-}
-.header__info ul li a svg {
-  width: 13px;
-  height: 13px;
-  margin-right: 5px;
-}
-.header__info ul li a svg path {
-  fill: var(--tp-text-4);
-}
-.header__border {
-  border-bottom: 1px solid rgba(3, 18, 32, 0.07);
 }
 .header__hamburger {
   margin-top: 3px;
+  padding: 10px 0 !important;
+  font-size: 20px !important;
 }
-.header__action ul li {
-  list-style: none;
-}
-.header__action ul li a {
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-  line-height: 38px;
-  text-align: center;
-  border: 2px solid rgba(12, 20, 15, 0.08);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-}
-.header__action ul li a:hover {
-  border-color: var(--tp-common-black-3);
-}
-.header__sticky.header__sticky {
+
+.header-sticky {
   position: fixed !important;
   left: 0;
   margin: auto;

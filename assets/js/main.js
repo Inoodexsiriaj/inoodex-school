@@ -24,6 +24,20 @@
   // 	document.documentElement.style.setProperty(colorVariable, clr);
   // })
 
+  // photo gallery popup
+  $(".gallery__images").magnificPopup({
+    delegate: "a.popup-image", // Target <a> elements with class popup-image
+    type: "image",
+    gallery: {
+      enabled: true, // Enable gallery mode to navigate between images
+    },
+    image: {
+      titleSrc: function (item) {
+        return item.el.find("img").attr("alt"); // Use image alt text as caption
+      },
+    },
+  });
+
   ////////////////////////////////////////////////////
   // 02. Mobile Menu Js
   $("#mobile-menu").meanmenu({
@@ -68,23 +82,6 @@
     } else {
       $("#header-sticky").addClass("header-sticky");
     }
-  });
-
-  ////////////////////////////////////////////////////
-  // 07. Data CSS Js
-  $("[data-background").each(function () {
-    $(this).css(
-      "background-image",
-      "url( " + $(this).attr("data-background") + "  )"
-    );
-  });
-
-  $("[data-width]").each(function () {
-    $(this).css("width", $(this).attr("data-width"));
-  });
-
-  $("[data-bg-color]").each(function () {
-    $(this).css("background-color", $(this).attr("data-bg-color"));
   });
 
   ////////////////////////////////////////////////////
@@ -295,33 +292,6 @@
     },
   });
 
-  ////////////////////////////////////////////////////
-  // 13. Masonary Js
-  $(".grid").imagesLoaded(function () {
-    // init Isotope
-    var $grid = $(".grid").isotope({
-      itemSelector: ".grid-item",
-      percentPosition: true,
-      masonry: {
-        // use outer width of grid-sizer for columnWidth
-        columnWidth: ".grid-item",
-      },
-    });
-
-    // filter items on button click
-    $(".masonary-menu").on("click", "button", function () {
-      var filterValue = $(this).attr("data-filter");
-      $grid.isotope({ filter: filterValue });
-    });
-
-    //for menu active class
-    $(".masonary-menu button").on("click", function (event) {
-      $(this).siblings(".active").removeClass("active");
-      $(this).addClass("active");
-      event.preventDefault();
-    });
-  });
-
   /* magnificPopup img view */
   $(".popup-image").magnificPopup({
     type: "image",
@@ -338,46 +308,6 @@
   ////////////////////////////////////////////////////
   // 14. Wow Js
   new WOW().init();
-
-  ////////////////////////////////////////////////////
-  // 17. Show Login Toggle Js
-  $("#showlogin").on("click", function () {
-    $("#checkout-login").slideToggle(900);
-  });
-
-  ////////////////////////////////////////////////////
-  // 18. Show Coupon Toggle Js
-  $("#showcoupon").on("click", function () {
-    $("#checkout_coupon").slideToggle(900);
-  });
-
-  ////////////////////////////////////////////////////
-  // 19. Create An Account Toggle Js
-  $("#cbox").on("click", function () {
-    $("#cbox_info").slideToggle(900);
-  });
-
-  ////////////////////////////////////////////////////
-  // 20. Shipping Box Toggle Js
-  $("#ship-box").on("click", function () {
-    $("#ship-box-info").slideToggle(1000);
-  });
-
-  ////////////////////////////////////////////////////
-  // 21. Counter Js
-  $(".counter").counterUp({
-    delay: 10,
-    time: 1000,
-  });
-
-  ////////////////////////////////////////////////////
-  // 22. Parallax Js
-  if ($(".scene").length > 0) {
-    $(".scene").parallax({
-      scalarX: 10.0,
-      scalarY: 15.0,
-    });
-  }
 
   ////////////////////////////////////////////////////
   // 23. InHover Active Js
